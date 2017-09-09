@@ -9,6 +9,7 @@ app.set('views', `${__dirname}/views`);
 app.use(expressLayouts);
 app.use(express.static(`${__dirname}/public`));
 
+app.get('/', (req, res) => res.send('coys'));
 app.get('/', (req, res) => res.render('home'));
 
-app.listen(port, () => console.log(`Express is listening on port ${port}`));
+app.listen(port, () => console.log(`Express is listening up in this motherfucker ${port}`));

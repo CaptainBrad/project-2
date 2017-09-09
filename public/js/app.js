@@ -1,0 +1,2 @@
+"use strict";console.log("wassssssuupppppppppppppppppppp");
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC5qcyJdLCJuYW1lcyI6WyJjb25zb2xlIiwibG9nIl0sIm1hcHBpbmdzIjoiYUFBQUEsUUFBUUMsSUFBSSIsImZpbGUiOiJhcHAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zb2xlLmxvZygnd2Fzc3Nzc3N1dXBwcHBwcHBwcHBwcHBwcHBwcHBwJyk7XG4iXX0=
