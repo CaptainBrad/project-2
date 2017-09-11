@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 
 const locationSchema = mongoose.Schema({
-  location: String,
+  area: String,
   image: String
 
 }, {
