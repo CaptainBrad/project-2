@@ -1,9 +1,11 @@
 const router = require('express').Router();
+const secureRoute = require('../lib/secureRoute');
 
 
 const toilets = require('../controllers/toilets');
 const locations = require('../controllers/locations');
 const registrations = require('../controllers/registrations');
+const sessions = require('../controllers/sessions');
 
 router.get('/', (req, res) => res.render('home'));
 
@@ -38,6 +40,19 @@ router.route('/locations')
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
+
+router.route('/login')
+  .get(sessions.new)
+  .post(sessions.create);
+
+router.get('/logout', sessions.delete);
+
+router.route('/toilets/:id/comments')
+  .post(secureRoute, toilets.commentsCreate);
+router.route('/toilets/:id/comments/:commentId')
+  .delete(secureRoute, toilets.commentsDelete);
+
+
 
 
 

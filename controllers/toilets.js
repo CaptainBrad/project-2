@@ -10,13 +10,13 @@ function toiletsIndex(req, res) {
     .catch(err => res.render('error', { err }));
 }
 // ====================================================
-function locationIndex(req, res) {
-  Location
-    .find()
-    .exec()
-    .then(locations => res.render('locations', { locations }))
-    .catch(err => res.render('error', { err }));
-}
+// function locationIndex(req, res) {
+//   Location
+//     .find()
+//     .exec()
+//     .then(locations => res.render('locations', { locations }))
+//     .catch(err => res.render('error', { err }));
+// }
 
 //===========================================================
 
@@ -79,7 +79,39 @@ function toiletsDelete(req, res) {
     .then(() => res.redirect('/toilets'))
     .catch(err => res.render('error', { err }));
 }
+// ===================================================================
 
+function toiletsCommentsCreate(req, res) {
+  Toilet
+    .findById(req.params.id)
+    .populate({
+      path: 'comments',
+      populate: {
+        path: 'user',
+        model: 'User'
+      }
+    })
+    .exec()
+    .then(toilet => {
+      toilet.comments.push(req.body);
+      return toilet.save();
+    })
+    .then(toilet => res.redirect(`/toilets/${toilet.id}`))
+    .catch(err => res.render('error', {err}));
+}
+
+function toiletsCommentsDelete(req, res) {
+  Toilet
+    .findById(req.params.id)
+    .exec()
+    .then(toilets => {
+      const comment = toilets.comments.id(req.params.commentId);
+      comment.remove();
+      return toilets.save();
+    })
+    .then(toilets => res.redirect(`/toilets/${toilets.id}`))
+    .catch(err => res.render('error', {err}));
+}
 
 module.exports = {
   index: toiletsIndex,
@@ -88,5 +120,7 @@ module.exports = {
   create: toiletsCreate,
   edit: toiletsEdit,
   update: toiletsUpdate,
-  delete: toiletsDelete
+  delete: toiletsDelete,
+  commentsCreate: toiletsCommentsCreate,
+  commentsDelete: toiletsCommentsDelete
 };

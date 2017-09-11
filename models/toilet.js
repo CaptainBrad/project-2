@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema({
   text: String,
-  rating: Number
+  rating: Number,
+  user: String
 });
 
 const toiletSchema = new mongoose.Schema({

@@ -1,21 +1,30 @@
 const express = require('express');
 const app = express();
-const { port, dbURI } = require('./config/environment'); //add secret after db
+const { port, dbURI, secret } = require('./config/environment'); //add secret after db
 // const { port } = require('./config/environment');
 const expressLayouts  = require('express-ejs-layouts');
 const morgan = require('morgan');
 
+
+
 // const bcrypt = require('bcrypt');
 
 const router = require('./config/routes');
+
+
+
+const bodyParser = require('body-parser');
+const methodOverride  = require('method-override');
+const session = require('express-session');
+const flash = require('express-flash');
+const userAuth = require('./lib/userAuth');
 
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 mongoose.connect(dbURI, { useMongoClient: true });
 
-const methodOverride  = require('method-override');
-const bodyParser = require('body-parser');
+
 
 app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
@@ -34,6 +43,13 @@ app.use(methodOverride((req) => {
     return method;
   }
 }));
+app.use(session({
+  secret: secret,
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(flash());
+app.use(userAuth);
 app.use(morgan('dev'));
 app.use(router);
 
