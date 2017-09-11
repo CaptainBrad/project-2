@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 
 const toilets = require('../controllers/toilets');
+
 router.route('/toilets')
   .get(toilets.index);
 // .post(toilets.create);
