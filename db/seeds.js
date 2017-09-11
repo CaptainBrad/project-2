@@ -13,8 +13,6 @@ Location.collection.drop();
 Location.create([{
   area: 'Marylebone',
   image: 'http://i.dailymail.co.uk/i/pix/2015/09/09/17/242AF96100000578-3225524-image-a-11_1441814578946.jpg'
-}, {
-
 }])
   .then((location) => {
     console.log(`${location.length} Locations created!`);

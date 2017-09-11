@@ -5,6 +5,8 @@ const { port, dbURI } = require('./config/environment'); //add secret after db
 const expressLayouts  = require('express-ejs-layouts');
 const morgan = require('morgan');
 
+// const bcrypt = require('bcrypt');
+
 const router = require('./config/routes');
 
 const mongoose = require('mongoose');

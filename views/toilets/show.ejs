@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="columns">
+    <div class="column">
+      <figure class="image">
+        <img src="<%= toilet.image %>">
+      </figure>
+    </div>
+    <div class="column">
+      <h3 class="title"><%= toilet.name %></h3>
+      <h4 class="subtitle"><%= toilet.location.area %></h4>
+      <p><%= toilet.address %></p>
+      <div class="icon is-small">
+        <i class="fa fa-pencil"></i>
+      </div>
+
+
+      <form method="POST" action="/toilets/<%= toilet.id %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <a class="button is-primary" href="/toilets/<%= toilet.id %>/edit">Edit</a>
+        <button class="button is-danger">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>

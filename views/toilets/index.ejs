@@ -1,8 +1,10 @@
 
   <% toilets.forEach(toilet => { %>
-    <h1><%= toilet.name %></h1>
+    <a href="/toilets/<%= toilet.id %>"><h1><%= toilet.name %></h1></a>
     <h2><%= toilet.address %></h2>
-    
+    <h2><%= toilet.location.area %></h2>
+    <h2><%= toilet.latLng %></h2>
+
     <div>
     <img src="<%= toilet.image %>">
     </div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <form method="POST" action="/toilets/<%= toilet.id %>">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" name="name" type="text" placeholder="Name" value="<%= toilet.name %>">
+      </div>
+    </div>
+    <div class="field">
+      <label for="location">Location</label>
+      <div class="control">
+        <div class="select">
+          <select name="location">
+            <% locations.forEach((location) => { %>
+              <option value="<%= location.id %>"><%= location.area %></option>
+            <% }) %>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label class="image">Image</label>
+      <div class="control">
+        <input class="input" name="image" type="text" placeholder="Image" value="<%= toilet.image %>">
+      </div>
+    </div>
+    <div class="field">
+      <label class="address">Address</label>
+      <div class="control">
+        <input class="input" name="address" type="text" placeholder="Address" value="<%= toilet.address %>">
+      </div>
+    </div>
+    <div class="control">
+      <button class="button is-primary">Submit</button>
+    </div>
+  </form>
+</div>
