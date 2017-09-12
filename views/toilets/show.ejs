@@ -10,8 +10,9 @@
       <%- toilet.getPoopIcons() %>
       <a href="/locations/<%= toilet.location.id %>"><h4 class="subtitle"><%= toilet.location.area %></h4></a>
       <p><%= toilet.address %></p>
+      <p><%= toilet.review %></p>
       <div class="icon is-small">
-        <i class="fa fa-pencil"></i>
+        <%# <i class="fa fa-pencil"></i>%>
       </div>
 
       <% if(locals.isAuthenticated) { %>

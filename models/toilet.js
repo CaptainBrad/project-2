@@ -16,7 +16,9 @@ commentSchema.methods.getPoopIcons = function() {
 
 const toiletSchema = new mongoose.Schema({
   name: String,
+  subtitle: String,
   address: String,
+  review: String,
   image: { type: String },
   location: { type: mongoose.Schema.ObjectId, ref: 'Location' },
   latLng: {
