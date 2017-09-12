@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="title is-1"><%= location.area %></h1>
+  <div class="columns">
+    <div class="column is-half">
+      <img src="<%= location.image %>">
+    </div>
+    <div class="column is-half">
+      <h2 class="title is-2">Loos in this area</h2>
+      <% toilets.forEach((toilet) => { %>
+        <a href="/toilets/<%= toilet.id %>"><h3 class="title is-3"><%= toilet.name %></h3></a>
+      <% }) %>
+    </div>
+  </div>
+</div>

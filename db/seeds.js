@@ -30,6 +30,7 @@ Location.create([{
 
 
       }]);
+
   })
   .then((toilet) => console.log(`${toilet.length} Loo's created!`))
   .catch((err) => console.log(err))

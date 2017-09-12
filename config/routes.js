@@ -12,21 +12,16 @@ router.get('/', (req, res) => res.render('home'));
 // post to /toilets is going to take the form data, and create a new toilet
 router.route('/toilets')
   .get(toilets.index)
-  .post(toilets.create);
+  .post(secureRoute, toilets.create);
 
 // /toilets/new only shows the new form (doesn't do any creating)
 router.route('/toilets/new')
-  .get(toilets.new);
+  .get(secureRoute, toilets.new);
 
 router.route('/toilets/:id')
-  .get(toilets.show);
-
-router.route('/toilets/:id')
-  .put(toilets.update);
-// add the update (.put)
-
-router.route('/toilets/:id')
-  .delete(toilets.delete);
+  .get(toilets.show)
+  .put(secureRoute, toilets.update)
+  .delete(secureRoute, toilets.delete);
 // add the delete (.delete)
 
 router.route('/toilets/:id/edit')
@@ -36,6 +31,9 @@ router.route('/toilets/:id/edit')
 
 router.route('/locations')
   .get(locations.index);
+
+router.route('/locations/:id')
+  .get(locations.show);
 
 router.route('/register')
   .get(registrations.new)

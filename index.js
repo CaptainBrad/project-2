@@ -60,4 +60,4 @@ app.use(router);
 // app.get('/', (req, res) => res.send('coys'));
 // app.get('/', (req, res) => res.render('home')); exported to routes
 
-app.listen(port, () => console.log(`Express is all up in this Motherfucker!!! ${port}`));
+app.listen(port, () => console.log(`Express listening to port ${port}`));

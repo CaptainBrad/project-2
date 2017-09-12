@@ -33,13 +33,14 @@ function toiletsNew(req, res) {
 function toiletsShow(req, res) {
   Toilet
     .findById(req.params.id)
-    .populate('location comments.user')
+    .populate('location comments.user user')
     .exec()
     .then(toilet => res.render('toilets/show', { toilet })) // render is the path to the file
     .catch(err => res.render('error', { err }));
 }
 
 function toiletsCreate(req, res) {
+  req.body.user = req.currentUser;
   Toilet
     .create(req.body) // req.body here is the data from the form
     .then(() => res.redirect('/toilets')) // take user back to index page

@@ -1,7 +1,34 @@
+@import "./bulma/sass/utilities/initial-variables";
+
+// Set the Bulma variables
+$primary: yellow;
+$danger: orange;
+
+// 4. Import the rest of Bulma
+@import "./bulma/bulma";
+
 body {
   color: tomato;
 }
 
 .navbar {
   background-color: yellow;
+}
+
+#map {
+  height: 500px;
+// background-color: grey;
+}
+
+.poop {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  line-height: 18px;
+  vertical-align: bottom;
+
+  &.half {
+    overflow: hidden;
+    width: 10px;
+  }
 }

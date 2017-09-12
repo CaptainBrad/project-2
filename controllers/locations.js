@@ -1,12 +1,14 @@
 const Location = require('../models/location');
+const Toilet = require('../models/toilet');
 
 function locationsIndex(req, res) {
   Location
     .find()
     .populate('location')
     .exec()
-    .then(locations => res.render('locations', { locations }))
+    .then(locations => res.render('locations/index', { locations }))
     .catch(err => res.render('error', { err }));
+  // });
 }
 
 function locationsNew(req, res) {
@@ -22,7 +24,14 @@ function locationsShow(req, res) {
     .findById(req.params.id)
     .populate('location')
     .exec()
-    .then(location => res.render('locations/show', { location })) // render is the path to the file
+    .then(location => {
+      return Toilet
+        .find({location: location})
+        .exec()
+        .then(toilets => {
+          res.render('locations/show', { location, toilets });
+        });
+    }) // render is the path to the file
     .catch(err => res.render('error', { err }));
 }
 

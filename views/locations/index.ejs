@@ -1,0 +1,8 @@
+<% locations.forEach(location => { %>
+  <a href="/locations/<%= location.id %>" id="toiletFilter">
+    <h1><%= location.area %></h1>
+  </a>
+  <div>
+    <img src="<%= location.image %>">
+  </div>
+<% }) %>
