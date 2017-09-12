@@ -33,7 +33,7 @@ function toiletsNew(req, res) {
 function toiletsShow(req, res) {
   Toilet
     .findById(req.params.id)
-    .populate('location')
+    .populate('location comments.user')
     .exec()
     .then(toilet => res.render('toilets/show', { toilet })) // render is the path to the file
     .catch(err => res.render('error', { err }));
@@ -82,6 +82,7 @@ function toiletsDelete(req, res) {
 // ===================================================================
 
 function toiletsCommentsCreate(req, res) {
+  req.body.user = req.currentUser;
   Toilet
     .findById(req.params.id)
     .populate({

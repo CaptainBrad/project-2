@@ -26,10 +26,7 @@ Location.create([{
           lat: 51.517876,
           lng: -0.1462534
         },
-        comments: [{
-          text: 'make poop here',
-          rating: 5
-        }]
+        comments: []
 
 
       }]);

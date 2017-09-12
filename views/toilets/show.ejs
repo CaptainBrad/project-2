@@ -13,7 +13,7 @@
         <i class="fa fa-pencil"></i>
       </div>
 
-
+      <% if(locals.isAuthenticated) { %>
       <form method="POST" action="/toilets/<%= toilet.id %>/comments">
         <div class="row">
         <div class="col-6">
@@ -39,17 +39,19 @@
               5<input type="radio" value="5" name="rating">
             </label>
         </div>
-        <input type="text" value="<%= locals.currentUser.username %>" name="user" readonly>
-          <button class="addButton">Add</button>
+        <button class="addButton">Add</button>
       </div>
       </div>
       </form>
+      <% } %>
       <ul>
       <% toilet.comments.forEach(comment => { %>
         <div class="row">
         <li><%= comment.text %> - <%= comment.rating %>/5
-        <p>Added by: <strong><%= comment.user %></strong></p>
-        <% if(comment.user === locals.currentUser.username) { %>
+        <% if(comment.user) {%>
+        <p>Added by: <strong><%= comment.user.username %></strong></p>
+        <% } %>
+        <% if(locals.isAuthenticated && comment.user === locals.currentUser.username) { %>
         <form method="POST" action="/toilets/<%= toilet.id %>/comments/<%= comment.id %>">
             <input type="hidden" name="_method" value="DELETE" required>
               <button>Delete</button>
