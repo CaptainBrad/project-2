@@ -112,6 +112,21 @@ Location
           text: 'Like the creepy vibez but really rough toilet paper',
           rating: 1
         }]
+      },{
+        name: 'The Dorchester',
+        subtitle: 'Upper class poop',
+        review: 'Good all round poop palace',
+        address: 'Park Lane',
+        image: 'https://assets.londonist.com/uploads/2015/02/i875/toilets-china-tang.jpg',
+        location: location[1],
+        latLng: {
+          lat: 51.5070245, // add latLng
+          lng: -0.1545161 // add latLng
+        },
+        comments: [{
+          text: 'I loved the little soaps so much I put about 5 in my pocket',
+          rating: 1
+        }]
 
       // },{
       //   name: 'Nopi',
