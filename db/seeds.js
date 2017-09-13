@@ -97,6 +97,21 @@ Location
           text: 'Sent an on toilet selfie to my tinder fling, we dont speak anymore',
           rating: 2
         }]
+      },{
+        name: 'The Bonneville',
+        subtitle: 'Creepy Poop',
+        review: 'You kind of feel like Jack the Ripper is going to pop out at any given moment... But thats all part of the fun',
+        address: 'Hackney',
+        image: 'https://i0.wp.com/thecarouser.com/wp-content/uploads/2015/07/The-Bonneville-toilets.jpeg',
+        location: location[4],
+        latLng: {
+          lat: 51.5509442, // add latLng
+          lng: -0.0545107 // add latLng
+        },
+        comments: [{
+          text: 'Like the creepy vibez but really rough toilet paper',
+          rating: 1
+        }]
 
       // },{
       //   name: 'Nopi',

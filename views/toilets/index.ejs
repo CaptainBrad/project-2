@@ -1,17 +1,22 @@
-
-  <% toilets.forEach(toilet => { %>
-    <a href="/toilets/<%= toilet.id %>"><h1><%= toilet.name %></h1></a>
-    <h2><%= toilet.address %></h2>
-    <h2><%= toilet.subtitle %></h2>
-    <h2><%= toilet.location.area %></h2>
-
-
-
-
-    <div>
-    <img src="<%= toilet.image %>">
-    </div>
-
-
-
-  <% }) %>
+<main class="container">
+  <div class="columns is-multiline">
+    <% toilets.forEach(toilet => { %>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="<%= toilet.image %>">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <a href="/toilets/<%= toilet.id %>"><p class="title is-4"><%= toilet.name %></p></a>
+              <p class="subtitle is-6"><%= toilet.subtitle %></p>
+              <%= toilet.location.area %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</main>

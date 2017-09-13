@@ -7,7 +7,8 @@
     </div>
     <div class="column">
       <h3 class="title"><%= toilet.name %></h3>
-      <%- toilet.getPoopIcons() %>
+      <%- toilet.getPoopIcons() %> <p>Average poop rating</p>
+      <br>
       <a href="/locations/<%= toilet.location.id %>"><h4 class="subtitle"><%= toilet.location.area %></h4></a>
       <p><%= toilet.address %></p>
       <p><%= toilet.review %></p>
@@ -20,7 +21,8 @@
         <div class="row">
         <div class="col-6">
           <label>Comment</label>
-          <textarea name="text"></textarea>
+
+          <textarea class="textarea" name="text"></textarea>
         </div>
       <div class="col-6">
         <div>
@@ -41,7 +43,7 @@
               5<input type="radio" value="5" name="rating">
             </label>
         </div>
-        <button class="addButton">Add</button>
+        <button class="button is-primary">Add</button>
       </div>
       </div>
       </form>

@@ -1,8 +1,20 @@
-<% locations.forEach(location => { %>
-  <a href="/locations/<%= location.id %>" id="toiletFilter">
-    <h1><%= location.area %></h1>
-  </a>
-  <div>
-    <img src="<%= location.image %>">
+<main class="container">
+  <div class="columns is-multiline">
+    <% locations.forEach(location => { %>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="<%= location.image %>">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <a href="/locations/<%= location.id %>"><p class="title is-4"><%= location.area %></p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }) %>
   </div>
-<% }) %>
+</main>

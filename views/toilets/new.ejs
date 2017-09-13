@@ -1,49 +1,51 @@
-<h1 class="title is-1">New Loo</h1>
+<div class="container">
+  <h1 class="title is-1">New Loo</h1>
 
-<div class="columns">
-  <form class="column is-half" method="POST" action="/toilets">
+  <div class="columns">
+    <form class="column is-half" "upload" method="POST" action="/toilets">
 
-    <div class="field">
-      <label for="name">Name</label>
-      <div class="control">
-        <input class="input" type="text" name="name" id="name">
-      </div>
-    </div>
-
-    <div class="field">
-      <label for="subtitle">Subtitle</label>
-      <div class="control">
-        <input class="input" type="text" name="subtitle" id="subtitle">
-      </div>
-    </div>
-
-    <div class="field">
-      <label for="address">Address</label>
-      <div class="control">
-        <input class="input" type="text" name="address" id="address">
-      </div>
-    </div>
-
-    <div class="field">
-      <label for="image">Image URL</label>
-      <div class="control">
-        <input class="input" type="text" name="image" id="image">
-      </div>
-    </div>
-
-    <div class="field">
-      <label for="location">Location</label>
-      <div class="control">
-        <div class="select">
-          <select name="location">
-            <% locations.forEach((location) => { %>
-              <option value="<%= location.id %>"><%= location.area %></option>
-            <% }) %>
-          </select>
+      <div class="field">
+        <label for="name">Name</label>
+        <div class="control">
+          <input class="input" type="text" name="name" id="name">
         </div>
       </div>
-    </div>
 
-    <button class="button is-primary is-fullwidth">Create</button>
-  </form>
+      <div class="field">
+        <label for="subtitle">Subtitle</label>
+        <div class="control">
+          <input class="input" type="text" name="subtitle" id="subtitle">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="address">Address</label>
+        <div class="control">
+          <input class="input" type="text" name="address" id="address">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="image">Image URL</label>
+        <div class="control">
+          <input class="input" type="text" name="image" id="image">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="location">Location</label>
+        <div class="control">
+          <div class="select">
+            <select name="location">
+              <% locations.forEach((location) => { %>
+                <option value="<%= location.id %>"><%= location.area %></option>
+              <% }) %>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button class="button is-primary is-fullwidth">Create</button>
+    </form>
+  </div>
 </div>

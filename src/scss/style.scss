@@ -1,22 +1,28 @@
 @import "./bulma/sass/utilities/initial-variables";
 
 // Set the Bulma variables
-$primary: yellow;
+$primary: violet;
 $danger: orange;
 
 // 4. Import the rest of Bulma
 @import "./bulma/bulma";
 
 body {
-  color: tomato;
+  color: black;
 }
 
 .navbar {
-  background-color: yellow;
+  background-color: violet;
+}
+
+.container {
+  margin-top: 50px;
 }
 
 #map {
   height: 500px;
+  border: 2px solid purple;
+  margin: 20px 10px;
 // background-color: grey;
 }
 
@@ -32,3 +38,58 @@ body {
     width: 10px;
   }
 }
+
+.hero {
+
+  font-size: 60px;
+  text-align: center;
+  background-image: url(http://gen4congress.com/wp-content/uploads/2017/08/fancy-idea-white-marble-background-4-beautiful-marble-wallpaper-shshi-bg-pinterest-best.jpg);
+  background-size: cover;
+
+}
+
+.section {
+  background-color: lightgrey;
+  text-align: center;
+  font-weight: bold;
+  background-size: cover;
+}
+
+.footer {
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+}
+
+// .card {
+//   margin: 10px auto;
+//   width: 60%;
+// }
+
+// .columns   {
+//   margin-left: 10px;
+// }
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 80px;
+  font-size: 40px;
+  margin: 10px 10px 10px 20px;
+}
+
+p {
+  margin: 20px 0;
+
+}
+
+
+.poopTitle h1 {
+  font-size: 100px;
+  margin-bottom: 50px;
+}
+// .title is-1 {
+//   font-size: 40px;
+// }

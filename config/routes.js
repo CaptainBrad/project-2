@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const secureRoute = require('../lib/secureRoute');
 
-
 const toilets = require('../controllers/toilets');
 const locations = require('../controllers/locations');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
+const users = require('../controllers/users');
 
 router.get('/', (req, res) => res.render('home'));
 
@@ -50,7 +50,7 @@ router.route('/toilets/:id/comments')
 router.route('/toilets/:id/comments/:commentId')
   .delete(secureRoute, toilets.commentsDelete);
 
-
+router.get('/checkemail', users.checkEmail);
 
 
 
